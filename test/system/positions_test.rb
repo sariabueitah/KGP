@@ -6,12 +6,12 @@ class PositionsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit positions_url
+    visit employee_positions_url
     assert_selector "h1", text: "Positions"
   end
 
   test "should create position" do
-    visit positions_url
+    visit employee_positions_url
     click_on "New position"
 
     fill_in "Title", with: @position.title
@@ -22,7 +22,7 @@ class PositionsTest < ApplicationSystemTestCase
   end
 
   test "should update Position" do
-    visit position_url(@position)
+    visit employee_position_url(@position)
     click_on "Edit this position", match: :first
 
     fill_in "Title", with: @position.title
@@ -33,7 +33,7 @@ class PositionsTest < ApplicationSystemTestCase
   end
 
   test "should destroy Position" do
-    visit position_url(@position)
+    visit employee_position_url(@position)
     click_on "Destroy this position", match: :first
 
     assert_text "Position was successfully destroyed"
