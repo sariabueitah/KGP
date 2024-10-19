@@ -1,0 +1,26 @@
+<div id="<%= dom_id employee %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= employee.first_name %> <%= employee.father_name %> <%= employee.grandfather_name %> <%= employee.family_name %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name Arabic:</strong>
+    <%= employee.ar_first_name %> <%= employee.ar_father_name %> <%= employee.ar_grandfather_name %> <%= employee.ar_family_name %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= employee.email%>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">National ID:</strong>
+    <%= employee.nid %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone Number:</strong>
+    <%= employee.phone_number %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Emergancy Phone Number:</strong>
+    <%= employee.e_phone_number %>
+  </p>
+</div>

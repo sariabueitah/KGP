@@ -1,0 +1,57 @@
+<div>
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <% content_for :title, "Employees" %>
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Employees</h1>
+    <%= link_to "New employee", new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+  <div class="flex flex-col">
+    <div class="flex my-6 relative">
+      <div class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-center border rounded">By Name
+        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </div>
+      <div class="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44 absolute top-12">
+        <ul class="py-2">
+          <li class="inline-flex w-full px-4 py-2">
+            By National ID
+          </li>
+        </ul>
+      </div>
+      <div class="relative w-full">
+        <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 rounded border" placeholder="Search" />
+        <button type="submit" class="absolute top-0 end-0 p-2.5 h-full rounded border">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+          <span class="sr-only">Search</span>
+        </button>
+      </div>
+    </div>
+    <table id="employees" class="min-w-full divide-y">
+      <thead>
+        <tr>
+          <th class="text-start text-xs font-medium">
+            <div>Name</div>
+            <div>Name arabic</div>
+          </th>
+          <th class="text-start text-xs font-medium">Email</th>
+          <th class="text-start text-xs font-medium">National ID</th>
+          <th class="text-start text-xs font-medium">
+            <div>Phone Number</div>
+            <div>Emergency Phone Number</div>
+          </th>
+          <th class="text-start text-xs font-medium">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <% @employees.each do |employee| %>
+          <%= render "employee_row", employee: employee %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

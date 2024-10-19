@@ -1,0 +1,58 @@
+<div class="fixed top-0 left-0 w-80 shadow-lg h-screen bg-white hidden md:block">
+  <div class="flex items-center px-6 pb-6">
+    <%= image_tag("logo.webp", class: 'h-16') %>
+    <h1 class="ml-3">Name</h1>
+  </div>
+  <nav class="p-6">
+    <ul>
+      <li class="flex justify-between p-3">
+        <%= link_to "Dashboard", root_path %>
+      </li>
+      <li data-controller="accordion">
+        <div class="flex justify-between p-3">
+          <%= link_to "Employees", employees_path %>
+          <div class="cursor-pointer rounded-full bg-white p-1 hover:shadow-[inset_0_0_6px] hover:shadow-gray-500/40 transition-all" data-accordion-target="arrow" data-action="click->accordion#toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+        </div>
+        <ul class="w-full ml-3 max-h-0 transition-all overflow-hidden duration-500" data-accordion-target="menu">
+          <li class="p-3">
+            <%# link_to "Contracts", employee_contracts_path %>
+          </li>
+          <li class="p-3">
+            <%# link_to "Advances", employee_advances_path %>
+          </li>
+          <li class="p-3">
+            <%# link_to "Banks", employee_banks_path %>
+          </li>
+          <li class="p-3">
+            <%= link_to "Positions", employee_positions_path %>
+          </li>
+        </ul>
+      </li>
+      <li data-controller="accordion">
+        <div class="flex justify-between p-3">
+          <a href="#">Students</a>
+          <div class="cursor-pointer rounded-full bg-white p-1 hover:shadow-[inset_0_0_6px] hover:shadow-gray-500/40 transition-all" data-accordion-target="arrow" data-action="click->accordion#toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+        </div>
+        <ul class="w-full ml-3 max-h-0 transition-all overflow-hidden duration-500" data-accordion-target="menu">
+          <li class="p-3">
+            <a href="#">x1</a>
+          </li>
+          <li class="p-3">
+            <a href="#">x2</a>
+          </li>
+          <li class="p-3">
+            <a href="#">x3</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

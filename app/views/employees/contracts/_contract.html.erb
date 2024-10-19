@@ -1,0 +1,22 @@
+<div id="<%= dom_id contract %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Start Date:</strong>
+    <%= contract.start_date %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">End Date:</strong>
+    <%= contract.end_date %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Salary:</strong>
+    <%= contract.salary %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Active:</strong>
+    <%= contract.active %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Position:</strong>
+    <%= Position.find(contract.position_id).title %>
+  </p>
+</div>

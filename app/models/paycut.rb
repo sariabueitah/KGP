@@ -1,0 +1,2 @@
+class Paycut < ApplicationRecord
+end

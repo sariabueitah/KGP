@@ -1,0 +1,30 @@
+<%= form_with(model: [employee, bank], class: "contents") do |form| %>
+  <% if bank.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+      <ul>
+        <% bank.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5 my-5">
+    <div class="col-span-1">
+      <%= form.label :name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.text_field :name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    </div>
+    <div class="col-span-1">
+      <%= form.label :branch, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.text_field :branch, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    </div>
+    <div class="col-span-1">
+      <%= form.label :iban, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.text_field :iban, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    </div>
+  </div>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= link_to "Back to banks", employee_banks_path(bank.employee_id || employee), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium cursor-pointer ring-2 hover:ring-blue-500" %>
+  </div>
+<% end %>

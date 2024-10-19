@@ -1,0 +1,257 @@
+2024-08-14 17:21:01.532 +03 [28518] FATAL:  lock file "postmaster.pid" already exists
+2024-08-14 17:21:01.532 +03 [28518] HINT:  Is another postmaster (PID 576) running in data directory "/Users/saryabueitah/.asdf/installs/postgres/16.4/data"?
+2024-08-15 15:33:49.639 +03 [3667] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-08-15 15:33:49.643 +03 [3667] LOG:  listening on IPv6 address "::1", port 5432
+2024-08-15 15:33:49.643 +03 [3667] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-08-15 15:33:49.643 +03 [3667] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-08-15 15:33:49.650 +03 [3670] LOG:  database system was shut down at 2024-08-15 01:23:31 +03
+2024-08-15 15:33:49.660 +03 [3667] LOG:  database system is ready to accept connections
+2024-08-15 15:38:49.648 +03 [3668] LOG:  checkpoint starting: time
+2024-08-15 15:38:50.142 +03 [3668] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.489 s, sync=0.002 s, total=0.495 s; sync files=5, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1D78B88, redo lsn=0/1D78B50
+2024-08-19 20:54:19.650 +03 [3667] LOG:  received smart shutdown request
+2024-08-19 20:54:19.653 +03 [3667] LOG:  background worker "logical replication launcher" (PID 3673) exited with exit code 1
+2024-08-19 20:54:19.653 +03 [3668] LOG:  shutting down
+2024-08-19 20:54:19.655 +03 [3668] LOG:  checkpoint starting: shutdown immediate
+2024-08-19 20:54:19.661 +03 [3668] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1D78C38, redo lsn=0/1D78C38
+2024-08-19 20:54:19.664 +03 [3667] LOG:  database system is shut down
+2024-08-20 10:55:06.609 +03 [1501] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-08-20 10:55:06.616 +03 [1501] LOG:  listening on IPv6 address "::1", port 5432
+2024-08-20 10:55:06.616 +03 [1501] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-08-20 10:55:06.617 +03 [1501] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-08-20 10:55:06.628 +03 [1504] LOG:  database system was shut down at 2024-08-19 20:54:19 +03
+2024-08-20 10:55:06.636 +03 [1501] LOG:  database system is ready to accept connections
+2024-08-20 11:00:06.632 +03 [1502] LOG:  checkpoint starting: time
+2024-08-20 11:00:06.640 +03 [1502] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1D78D20, redo lsn=0/1D78CE8
+2024-08-20 12:05:06.655 +03 [1502] LOG:  checkpoint starting: time
+2024-08-20 12:05:14.622 +03 [1502] LOG:  checkpoint complete: wrote 79 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.945 s, sync=0.017 s, total=7.967 s; sync files=78, longest=0.002 s, average=0.001 s; distance=329 kB, estimate=329 kB; lsn=0/1DCB170, redo lsn=0/1DCB138
+2024-08-20 20:52:43.536 +03 [1502] LOG:  checkpoint starting: time
+2024-08-20 20:52:46.566 +03 [1502] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.017 s, sync=0.003 s, total=3.030 s; sync files=17, longest=0.001 s, average=0.001 s; distance=178 kB, estimate=314 kB; lsn=0/1DF7AA8, redo lsn=0/1DF7A70
+2024-08-20 21:07:43.573 +03 [1502] LOG:  checkpoint starting: time
+2024-08-20 21:07:51.078 +03 [1502] LOG:  checkpoint complete: wrote 75 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.487 s, sync=0.010 s, total=7.505 s; sync files=67, longest=0.003 s, average=0.001 s; distance=388 kB, estimate=388 kB; lsn=0/1E58D98, redo lsn=0/1E58D60
+2024-08-20 21:22:43.087 +03 [1502] LOG:  checkpoint starting: time
+2024-08-20 21:22:43.603 +03 [1502] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.003 s, total=0.517 s; sync files=3, longest=0.002 s, average=0.001 s; distance=8 kB, estimate=350 kB; lsn=0/1E5AE78, redo lsn=0/1E5AE40
+2024-08-21 17:30:29.608 +03 [1501] LOG:  received smart shutdown request
+2024-08-21 17:30:29.612 +03 [1501] LOG:  background worker "logical replication launcher" (PID 1507) exited with exit code 1
+2024-08-21 17:30:29.612 +03 [1502] LOG:  shutting down
+2024-08-21 17:30:29.613 +03 [1502] LOG:  checkpoint starting: shutdown immediate
+2024-08-21 17:30:29.619 +03 [1502] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=315 kB; lsn=0/1E5AF28, redo lsn=0/1E5AF28
+2024-08-21 17:30:29.625 +03 [1501] LOG:  database system is shut down
+2024-08-22 15:15:43.020 +03 [2729] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-08-22 15:15:43.029 +03 [2729] LOG:  listening on IPv6 address "::1", port 5432
+2024-08-22 15:15:43.029 +03 [2729] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-08-22 15:15:43.030 +03 [2729] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-08-22 15:15:43.049 +03 [2732] LOG:  database system was shut down at 2024-08-21 17:30:29 +03
+2024-08-22 15:15:43.061 +03 [2729] LOG:  database system is ready to accept connections
+2024-08-22 15:20:43.052 +03 [2730] LOG:  checkpoint starting: time
+2024-08-22 15:20:43.061 +03 [2730] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1E5B010, redo lsn=0/1E5AFD8
+2024-08-22 21:53:20.943 +03 [2730] LOG:  checkpoint starting: time
+2024-08-22 21:53:21.469 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.004 s, total=0.528 s; sync files=5, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1E5B3A0, redo lsn=0/1E5B368
+2024-08-23 09:29:01.615 +03 [2730] LOG:  checkpoint starting: time
+2024-08-23 09:29:01.962 +03 [2730] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.318 s, sync=0.002 s, total=0.355 s; sync files=4, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1E5B960, redo lsn=0/1E5B928
+2024-08-27 12:05:13.769 +03 [2730] LOG:  checkpoint starting: time
+2024-08-27 12:05:14.088 +03 [2730] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.307 s, sync=0.003 s, total=0.322 s; sync files=4, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1E5BF20, redo lsn=0/1E5BEE8
+2024-08-27 12:10:13.085 +03 [2730] LOG:  checkpoint starting: time
+2024-08-27 12:10:13.194 +03 [2730] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.002 s, total=0.109 s; sync files=2, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1E5C418, redo lsn=0/1E5C3E0
+2024-08-27 12:40:20.115 +03 [2730] LOG:  checkpoint starting: time
+2024-08-27 12:40:20.703 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.580 s, sync=0.003 s, total=0.588 s; sync files=5, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1E5C890, redo lsn=0/1E5C858
+2024-08-27 13:14:10.340 +03 [12895] ERROR:  column contracts.employee_id does not exist at character 48
+2024-08-27 13:14:10.340 +03 [12895] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:14:10.340 +03 [12895] STATEMENT:  SELECT "contracts"."id" FROM "contracts" WHERE "contracts"."employee_id" = $1
+2024-08-27 13:14:28.932 +03 [12895] ERROR:  column contracts.employee_id does not exist at character 48
+2024-08-27 13:14:28.932 +03 [12895] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:14:28.932 +03 [12895] STATEMENT:  SELECT "contracts"."id" FROM "contracts" WHERE "contracts"."employee_id" = $1
+2024-08-27 13:14:46.166 +03 [12895] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:14:46.166 +03 [12895] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:14:46.166 +03 [12895] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for pp */ LIMIT $2
+2024-08-27 13:14:46.168 +03 [12895] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:14:46.168 +03 [12895] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:14:46.168 +03 [12895] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for inspect */ LIMIT $2
+2024-08-27 13:40:01.022 +03 [14266] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:40:01.022 +03 [14266] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:40:01.022 +03 [14266] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for pp */ LIMIT $2
+2024-08-27 13:40:01.025 +03 [14266] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:40:01.025 +03 [14266] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:40:01.025 +03 [14266] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for inspect */ LIMIT $2
+2024-08-27 13:53:00.388 +03 [14849] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:53:00.388 +03 [14849] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:53:00.388 +03 [14849] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for pp */ LIMIT $2
+2024-08-27 13:53:00.389 +03 [14849] ERROR:  column contracts.employee_id does not exist at character 45
+2024-08-27 13:53:00.389 +03 [14849] HINT:  Perhaps you meant to reference the column "contracts.employees_id".
+2024-08-27 13:53:00.389 +03 [14849] STATEMENT:  SELECT "contracts".* FROM "contracts" WHERE "contracts"."employee_id" = $1 /* loading for inspect */ LIMIT $2
+2024-08-27 14:05:20.730 +03 [2730] LOG:  checkpoint starting: time
+2024-08-27 14:05:31.578 +03 [2730] LOG:  checkpoint complete: wrote 108 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=10.829 s, sync=0.010 s, total=10.848 s; sync files=99, longest=0.002 s, average=0.001 s; distance=753 kB, estimate=753 kB; lsn=0/1F1D940, redo lsn=0/1F18E78
+2024-08-27 14:10:20.578 +03 [2730] LOG:  checkpoint starting: time
+2024-08-27 14:10:23.913 +03 [2730] LOG:  checkpoint complete: wrote 33 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.328 s, sync=0.004 s, total=3.335 s; sync files=11, longest=0.002 s, average=0.001 s; distance=94 kB, estimate=687 kB; lsn=0/1F30A98, redo lsn=0/1F30A60
+2024-08-28 16:23:38.423 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 16:23:38.936 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.506 s, sync=0.001 s, total=0.514 s; sync files=5, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=619 kB; lsn=0/1F30F10, redo lsn=0/1F30ED8
+2024-08-28 17:23:54.921 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 17:23:55.883 +03 [2730] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.953 s, sync=0.003 s, total=0.963 s; sync files=7, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=557 kB; lsn=0/1F31350, redo lsn=0/1F31318
+2024-08-28 17:43:54.906 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 17:43:55.430 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.004 s, total=0.524 s; sync files=6, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=501 kB; lsn=0/1F317A0, redo lsn=0/1F31768
+2024-08-28 21:42:05.877 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 21:42:06.595 +03 [2730] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.709 s, sync=0.003 s, total=0.718 s; sync files=6, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=451 kB; lsn=0/1F31C00, redo lsn=0/1F31BC8
+2024-08-28 21:47:05.602 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 21:47:06.520 +03 [2730] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.910 s, sync=0.004 s, total=0.918 s; sync files=10, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=406 kB; lsn=0/1F32640, redo lsn=0/1F32608
+2024-08-28 21:52:05.529 +03 [2730] LOG:  checkpoint starting: time
+2024-08-28 21:52:06.455 +03 [2730] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.915 s, sync=0.005 s, total=0.926 s; sync files=10, longest=0.002 s, average=0.001 s; distance=3 kB, estimate=366 kB; lsn=0/1F33500, redo lsn=0/1F334C8
+2024-08-29 12:48:03.321 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 12:48:04.246 +03 [2730] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.915 s, sync=0.004 s, total=0.926 s; sync files=10, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=330 kB; lsn=0/1F34310, redo lsn=0/1F342D8
+2024-08-29 12:53:03.251 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 12:53:03.359 +03 [2730] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=297 kB; lsn=0/1F34610, redo lsn=0/1F345D8
+2024-08-29 13:23:03.473 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 13:23:04.298 +03 [2730] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.813 s, sync=0.005 s, total=0.825 s; sync files=7, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=267 kB; lsn=0/1F349A0, redo lsn=0/1F34968
+2024-08-29 13:28:03.304 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 13:28:03.716 +03 [2730] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.405 s, sync=0.004 s, total=0.413 s; sync files=5, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=240 kB; lsn=0/1F34E28, redo lsn=0/1F34DF0
+2024-08-29 13:33:03.718 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 13:33:04.232 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.507 s, sync=0.003 s, total=0.514 s; sync files=6, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=216 kB; lsn=0/1F355B0, redo lsn=0/1F35578
+2024-08-29 13:43:03.243 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 13:43:03.653 +03 [2730] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.404 s, sync=0.001 s, total=0.410 s; sync files=5, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=195 kB; lsn=0/1F35BB8, redo lsn=0/1F35B80
+2024-08-29 14:23:03.795 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 14:23:05.629 +03 [2730] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.824 s, sync=0.003 s, total=1.834 s; sync files=17, longest=0.001 s, average=0.001 s; distance=81 kB, estimate=184 kB; lsn=0/1F4A0E8, redo lsn=0/1F4A0B0
+2024-08-29 14:53:03.760 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 14:53:04.278 +03 [2730] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.507 s, sync=0.004 s, total=0.519 s; sync files=6, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=165 kB; lsn=0/1F4A910, redo lsn=0/1F4A8D8
+2024-08-29 17:06:57.479 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 17:06:57.596 +03 [2730] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.105 s, sync=0.002 s, total=0.118 s; sync files=2, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=149 kB; lsn=0/1F4AD78, redo lsn=0/1F4AD40
+2024-08-29 17:26:57.457 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 17:26:57.569 +03 [2730] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.003 s, total=0.113 s; sync files=2, longest=0.002 s, average=0.002 s; distance=1 kB, estimate=134 kB; lsn=0/1F4B2A0, redo lsn=0/1F4B268
+2024-08-29 21:58:37.550 +03 [2730] LOG:  checkpoint starting: time
+2024-08-29 21:58:37.667 +03 [2730] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.105 s, sync=0.002 s, total=0.119 s; sync files=2, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=121 kB; lsn=0/1F4B888, redo lsn=0/1F4B850
+2024-08-29 22:30:32.761 +03 [2729] LOG:  received smart shutdown request
+2024-08-29 22:30:32.763 +03 [2729] LOG:  background worker "logical replication launcher" (PID 2735) exited with exit code 1
+2024-08-29 22:30:32.763 +03 [2730] LOG:  shutting down
+2024-08-29 22:30:32.764 +03 [2730] LOG:  checkpoint starting: shutdown immediate
+2024-08-29 22:30:32.769 +03 [2730] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.006 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=109 kB; lsn=0/1F4B938, redo lsn=0/1F4B938
+2024-08-29 22:30:32.775 +03 [2729] LOG:  database system is shut down
+2024-09-16 17:28:33.573 +03 [11390] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-09-16 17:28:33.583 +03 [11390] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-09-16 17:28:33.583 +03 [11390] LOG:  listening on IPv6 address "::1", port 5432
+2024-09-16 17:28:33.586 +03 [11390] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-09-16 17:28:33.604 +03 [11393] LOG:  database system was shut down at 2024-08-29 22:30:32 +03
+2024-09-16 17:28:33.620 +03 [11390] LOG:  database system is ready to accept connections
+2024-09-16 17:33:33.608 +03 [11391] LOG:  checkpoint starting: time
+2024-09-16 17:33:33.622 +03 [11391] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BA20, redo lsn=0/1F4B9E8
+2024-09-16 20:02:43.258 +03 [11390] LOG:  received smart shutdown request
+2024-09-16 20:02:43.260 +03 [11390] LOG:  background worker "logical replication launcher" (PID 11396) exited with exit code 1
+2024-09-16 20:02:43.260 +03 [11391] LOG:  shutting down
+2024-09-16 20:02:43.261 +03 [11391] LOG:  checkpoint starting: shutdown immediate
+2024-09-16 20:02:43.268 +03 [11391] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BAD0, redo lsn=0/1F4BAD0
+2024-09-16 20:02:43.272 +03 [11390] LOG:  database system is shut down
+2024-09-17 15:44:44.272 +03 [5125] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-09-17 15:44:44.277 +03 [5125] LOG:  listening on IPv6 address "::1", port 5432
+2024-09-17 15:44:44.277 +03 [5125] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-09-17 15:44:44.278 +03 [5125] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-09-17 15:44:44.289 +03 [5128] LOG:  database system was shut down at 2024-09-16 20:02:43 +03
+2024-09-17 15:44:44.298 +03 [5125] LOG:  database system is ready to accept connections
+2024-09-17 15:49:44.318 +03 [5126] LOG:  checkpoint starting: time
+2024-09-17 15:49:44.330 +03 [5126] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.029 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BBB8, redo lsn=0/1F4BB80
+2024-09-18 16:13:45.082 +03 [22977] FATAL:  lock file "postmaster.pid" already exists
+2024-09-18 16:13:45.082 +03 [22977] HINT:  Is another postmaster (PID 5125) running in data directory "/Users/saryabueitah/.asdf/installs/postgres/16.4/data"?
+2024-09-18 21:14:36.558 +03 [5125] LOG:  received smart shutdown request
+2024-09-18 21:14:36.561 +03 [5125] LOG:  background worker "logical replication launcher" (PID 5131) exited with exit code 1
+2024-09-18 21:14:36.561 +03 [5126] LOG:  shutting down
+2024-09-18 21:14:36.563 +03 [5126] LOG:  checkpoint starting: shutdown immediate
+2024-09-18 21:14:36.570 +03 [5126] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BC68, redo lsn=0/1F4BC68
+2024-09-18 21:14:36.575 +03 [5125] LOG:  database system is shut down
+2024-09-21 10:04:27.300 +03 [7329] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-09-21 10:04:27.317 +03 [7329] LOG:  listening on IPv6 address "::1", port 5432
+2024-09-21 10:04:27.317 +03 [7329] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-09-21 10:04:27.318 +03 [7329] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-09-21 10:04:27.336 +03 [7332] LOG:  database system was shut down at 2024-09-18 21:14:36 +03
+2024-09-21 10:04:27.345 +03 [7329] LOG:  database system is ready to accept connections
+2024-09-21 10:09:27.337 +03 [7330] LOG:  checkpoint starting: time
+2024-09-21 10:09:27.351 +03 [7330] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BD50, redo lsn=0/1F4BD18
+2024-09-21 14:51:19.613 +03 [7329] LOG:  received smart shutdown request
+2024-09-21 14:51:19.616 +03 [7329] LOG:  background worker "logical replication launcher" (PID 7335) exited with exit code 1
+2024-09-21 14:51:19.617 +03 [7330] LOG:  shutting down
+2024-09-21 14:51:19.617 +03 [7330] LOG:  checkpoint starting: shutdown immediate
+2024-09-21 14:51:19.624 +03 [7330] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BE00, redo lsn=0/1F4BE00
+2024-09-21 14:51:19.628 +03 [7329] LOG:  database system is shut down
+2024-09-22 18:51:37.194 +03 [4014] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-09-22 18:51:37.201 +03 [4014] LOG:  listening on IPv6 address "::1", port 5432
+2024-09-22 18:51:37.201 +03 [4014] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-09-22 18:51:37.202 +03 [4014] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-09-22 18:51:37.214 +03 [4017] LOG:  database system was shut down at 2024-09-21 14:51:19 +03
+2024-09-22 18:51:37.221 +03 [4014] LOG:  database system is ready to accept connections
+2024-09-22 18:56:37.215 +03 [4015] LOG:  checkpoint starting: time
+2024-09-22 18:56:37.221 +03 [4015] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1F4BEE8, redo lsn=0/1F4BEB0
+2024-09-23 13:53:47.870 +03 [16173] FATAL:  lock file "postmaster.pid" already exists
+2024-09-23 13:53:47.870 +03 [16173] HINT:  Is another postmaster (PID 4014) running in data directory "/Users/saryabueitah/.asdf/installs/postgres/16.4/data"?
+2024-09-23 14:48:17.335 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 14:48:17.761 +03 [4015] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.418 s, sync=0.001 s, total=0.428 s; sync files=5, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1F4C458, redo lsn=0/1F4C420
+2024-09-23 14:58:17.802 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 14:58:18.017 +03 [4015] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.205 s, sync=0.002 s, total=0.215 s; sync files=3, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1F4C868, redo lsn=0/1F4C830
+2024-09-23 15:03:17.025 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 15:03:17.339 +03 [4015] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.304 s, sync=0.001 s, total=0.315 s; sync files=4, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1F4CDB0, redo lsn=0/1F4CD78
+2024-09-23 15:08:17.331 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 15:08:17.647 +03 [4015] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.309 s, sync=0.002 s, total=0.316 s; sync files=4, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=2 kB; lsn=0/1F4D5B8, redo lsn=0/1F4D580
+2024-09-23 17:38:17.799 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 17:38:18.318 +03 [4015] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=2 kB; lsn=0/1F4DDD8, redo lsn=0/1F4DDA0
+2024-09-23 17:49:35.117 +03 [21346] ERROR:  database "kpg_development" is being accessed by other users
+2024-09-23 17:49:35.117 +03 [21346] DETAIL:  There is 1 other session using the database.
+2024-09-23 17:49:35.117 +03 [21346] STATEMENT:  DROP DATABASE IF EXISTS "kpg_development"
+2024-09-23 17:50:00.141 +03 [4015] LOG:  checkpoint starting: immediate force wait
+2024-09-23 17:50:00.145 +03 [4015] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=3 kB; lsn=0/1F4EC48, redo lsn=0/1F4EC10
+2024-09-23 17:50:00.240 +03 [4015] LOG:  checkpoint starting: immediate force wait
+2024-09-23 17:50:00.243 +03 [4015] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=3 kB; lsn=0/1F4F180, redo lsn=0/1F4F148
+2024-09-23 17:55:00.215 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 17:58:13.844 +03 [4015] LOG:  checkpoint complete: wrote 1910 buffers (11.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=193.586 s, sync=0.041 s, total=193.630 s; sync files=672, longest=0.002 s, average=0.001 s; distance=8940 kB, estimate=8940 kB; lsn=0/280A480, redo lsn=0/280A448
+2024-09-23 18:25:00.918 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 18:25:02.650 +03 [4015] LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.722 s, sync=0.004 s, total=1.732 s; sync files=13, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=8046 kB; lsn=0/280AFE8, redo lsn=0/280AFB0
+2024-09-23 18:30:00.655 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 18:30:00.864 +03 [4015] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.203 s, sync=0.002 s, total=0.210 s; sync files=3, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=7242 kB; lsn=0/280B298, redo lsn=0/280B260
+2024-09-23 18:35:00.869 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 18:35:02.699 +03 [4015] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.817 s, sync=0.006 s, total=1.830 s; sync files=15, longest=0.003 s, average=0.001 s; distance=3 kB, estimate=6518 kB; lsn=0/280C288, redo lsn=0/280C250
+2024-09-23 18:40:00.703 +03 [4015] LOG:  checkpoint starting: time
+2024-09-23 18:40:01.117 +03 [4015] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.406 s, sync=0.003 s, total=0.415 s; sync files=5, longest=0.003 s, average=0.001 s; distance=1 kB, estimate=5866 kB; lsn=0/280C798, redo lsn=0/280C760
+2024-09-29 17:11:05.232 +03 [4014] LOG:  received smart shutdown request
+2024-09-29 17:11:05.234 +03 [4014] LOG:  background worker "logical replication launcher" (PID 4020) exited with exit code 1
+2024-09-29 17:11:05.234 +03 [4015] LOG:  shutting down
+2024-09-29 17:11:05.235 +03 [4015] LOG:  checkpoint starting: shutdown immediate
+2024-09-29 17:11:05.242 +03 [4015] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.009 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=5280 kB; lsn=0/280C848, redo lsn=0/280C848
+2024-09-29 17:11:05.249 +03 [4014] LOG:  database system is shut down
+2024-10-06 17:36:27.938 +03 [3203] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-10-06 17:36:27.941 +03 [3203] LOG:  listening on IPv6 address "::1", port 5432
+2024-10-06 17:36:27.941 +03 [3203] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-10-06 17:36:27.942 +03 [3203] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-10-06 17:36:27.955 +03 [3206] LOG:  database system was shut down at 2024-09-29 17:11:05 +03
+2024-10-06 17:36:27.964 +03 [3203] LOG:  database system is ready to accept connections
+2024-10-06 17:41:27.955 +03 [3204] LOG:  checkpoint starting: time
+2024-10-06 17:41:28.363 +03 [3204] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.403 s, sync=0.002 s, total=0.409 s; sync files=3, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/280C930, redo lsn=0/280C8F8
+2024-10-07 01:32:32.226 +03 [3203] LOG:  received smart shutdown request
+2024-10-07 01:32:32.229 +03 [3203] LOG:  background worker "logical replication launcher" (PID 3209) exited with exit code 1
+2024-10-07 01:32:32.229 +03 [3204] LOG:  shutting down
+2024-10-07 01:32:32.230 +03 [3204] LOG:  checkpoint starting: shutdown immediate
+2024-10-07 01:32:32.236 +03 [3204] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/280C9E0, redo lsn=0/280C9E0
+2024-10-07 01:32:32.240 +03 [3203] LOG:  database system is shut down
+2024-10-07 12:47:09.780 +03 [4545] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-10-07 12:47:09.784 +03 [4545] LOG:  listening on IPv6 address "::1", port 5432
+2024-10-07 12:47:09.784 +03 [4545] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-10-07 12:47:09.784 +03 [4545] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-10-07 12:47:09.795 +03 [4548] LOG:  database system was shut down at 2024-10-07 01:32:32 +03
+2024-10-07 12:47:09.806 +03 [4545] LOG:  database system is ready to accept connections
+2024-10-07 12:52:09.800 +03 [4546] LOG:  checkpoint starting: time
+2024-10-07 12:52:09.810 +03 [4546] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/280CAC8, redo lsn=0/280CA90
+2024-10-07 13:12:09.880 +03 [4546] LOG:  checkpoint starting: time
+2024-10-07 13:12:10.198 +03 [4546] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.311 s, sync=0.002 s, total=0.320 s; sync files=4, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/280CE48, redo lsn=0/280CE10
+2024-10-07 13:57:09.178 +03 [4546] LOG:  checkpoint starting: time
+2024-10-07 13:57:09.503 +03 [4546] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.310 s, sync=0.002 s, total=0.332 s; sync files=4, longest=0.002 s, average=0.001 s; distance=2 kB, estimate=2 kB; lsn=0/280D758, redo lsn=0/280D720
+2024-10-08 10:42:55.602 +03 [4545] LOG:  received smart shutdown request
+2024-10-08 10:42:55.606 +03 [4545] LOG:  background worker "logical replication launcher" (PID 4551) exited with exit code 1
+2024-10-08 10:42:55.606 +03 [4546] LOG:  shutting down
+2024-10-08 10:42:55.607 +03 [4546] LOG:  checkpoint starting: shutdown immediate
+2024-10-08 10:42:55.615 +03 [4546] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=2 kB; lsn=0/280D808, redo lsn=0/280D808
+2024-10-08 10:42:55.619 +03 [4545] LOG:  database system is shut down
+2024-10-16 12:15:39.468 +03 [1952] LOG:  starting PostgreSQL 16.4 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-10-16 12:15:39.474 +03 [1952] LOG:  listening on IPv6 address "::1", port 5432
+2024-10-16 12:15:39.474 +03 [1952] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-10-16 12:15:39.476 +03 [1952] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-10-16 12:15:39.495 +03 [1956] LOG:  database system was shut down at 2024-10-08 10:42:55 +03
+2024-10-16 12:15:39.509 +03 [1952] LOG:  database system is ready to accept connections
+2024-10-16 12:20:39.492 +03 [1954] LOG:  checkpoint starting: time
+2024-10-16 12:20:39.503 +03 [1954] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/280D8F0, redo lsn=0/280D8B8
+2024-10-19 14:46:26.974 +03 [1952] LOG:  received smart shutdown request
+2024-10-19 14:46:26.979 +03 [1952] LOG:  background worker "logical replication launcher" (PID 1959) exited with exit code 1
+2024-10-19 14:46:26.980 +03 [1954] LOG:  shutting down
+2024-10-19 14:46:26.981 +03 [1954] LOG:  checkpoint starting: shutdown immediate
+2024-10-19 14:46:26.988 +03 [1954] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/280D9A0, redo lsn=0/280D9A0
+2024-10-19 14:46:26.994 +03 [1952] LOG:  database system is shut down
