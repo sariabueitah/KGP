@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="accordion"
+// Connects to data-controller="country"
 export default class extends Controller {
   static targets = ["input"]
 
@@ -10,6 +10,7 @@ export default class extends Controller {
   }
 
   getCountries(url){
+    console.log("fired get countries")
     this.ulTarget.innerHTML = ""
       fetch(url)
       .then(response => response.json())

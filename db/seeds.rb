@@ -8,13 +8,25 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Position.destroy_all
+
+Position.create!(
+  [
+    {
+      title: "teacher"
+    },
+    {
+      title: "driver"
+    }
+  ]
+)
 
 Employee.destroy_all
 
 
 
 
-Employee.create!(
+employees = Employee.create!(
   [
     {
       first_name: "haya",
@@ -78,3 +90,20 @@ Employee.create!(
     }
   ]
 )
+
+Contract.destroy_all
+
+employees.each_with_index do |obj, index|
+  Contract.create!(
+    [
+      {
+        start_date: Date.new(2024, 9, 1),
+        end_date: Date.new(2025, 9, 1),
+        salary: "300",
+        active: true,
+        employee_id: obj.id,
+        position: Position.find_by(title: "teacher")
+      }
+    ]
+  )
+end
