@@ -6,7 +6,12 @@ class EmployeesController < ApplicationController
     end
 
     def index
-      @employees = Employee.all
+      @search = params[:q]
+      @employees = if @search.blank?
+        Employee.all
+      else
+        Employee.search_employee(params[:q])
+      end
     end
 
     def show

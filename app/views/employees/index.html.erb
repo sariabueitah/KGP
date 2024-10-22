@@ -8,50 +8,49 @@
     <%= link_to "New employee", new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
   <div class="flex flex-col">
-    <div class="flex my-6 relative">
-      <div class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-center border rounded">By Name
-        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    <div class="relative">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>
       </div>
-      <div class="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44 absolute top-12">
-        <ul class="py-2">
-          <li class="inline-flex w-full px-4 py-2">
-            By National ID
-          </li>
-        </ul>
-      </div>
-      <div class="relative w-full">
-        <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 rounded border" placeholder="Search" />
-        <button type="submit" class="absolute top-0 end-0 p-2.5 h-full rounded border">
-          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-          </svg>
-          <span class="sr-only">Search</span>
-        </button>
-      </div>
+      <%= form_with url: employees_path, method: :get, data: { turbo_frame: 'employee_listings' } do |form| %>
+        <%= form.search_field :q, 
+          class: 'block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
+          placeholder: "Search for Name or Description", 
+          data: {
+            controller: "employee-search",
+            action: "input->employee-search#update"
+          }
+        %>
+        <%= form.submit "Search", class: "text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"%>
+      <% end %>
+      <%# <input data-controller="employee-search" data-action="input->employee-search#update" type="search" id="default-search" class="" placeholder="Search Mockups, Logos..." required /> %>
+      <%# <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> %>
     </div>
-    <table id="employees" class="min-w-full divide-y">
-      <thead>
-        <tr>
-          <th class="text-start text-xs font-medium">
-            <div>Name</div>
-            <div>Name arabic</div>
-          </th>
-          <th class="text-start text-xs font-medium">Email</th>
-          <th class="text-start text-xs font-medium">National ID</th>
-          <th class="text-start text-xs font-medium">
-            <div>Phone Number</div>
-            <div>Emergency Phone Number</div>
-          </th>
-          <th class="text-start text-xs font-medium">Actions</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y">
-        <% @employees.each do |employee| %>
-          <%= render "employee_row", employee: employee %>
-        <% end %>
-      </tbody>
-    </table>
+    <%= turbo_frame_tag 'employee_listings' do %>
+      <table id="employees" class="min-w-full divide-y">
+        <thead>
+          <tr>
+            <th class="text-start text-xs font-medium">
+              <div>Name</div>
+              <div>Name arabic</div>
+            </th>
+            <th class="text-start text-xs font-medium">Email</th>
+            <th class="text-start text-xs font-medium">National ID</th>
+            <th class="text-start text-xs font-medium">
+              <div>Phone Number</div>
+              <div>Emergency Phone Number</div>
+            </th>
+            <th class="text-start text-xs font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <% @employees.each do |employee| %>
+            <%= render "employee_row", employee: employee %>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
   </div>
 </div>
