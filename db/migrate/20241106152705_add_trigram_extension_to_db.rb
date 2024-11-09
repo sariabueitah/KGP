@@ -3,7 +3,7 @@ class AddTrigramExtensionToDb < ActiveRecord::Migration[7.2]
     execute "CREATE EXTENSION pg_trgm;"
   end
 
-  def down 
+  def down
     execute "DROP EXTENSION pg_trgm;"
   end
 end
