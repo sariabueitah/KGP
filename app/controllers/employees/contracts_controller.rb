@@ -2,8 +2,17 @@ class Employees::ContractsController < ApplicationController
   before_action :set_contract, only: %i[ show edit update destroy ]
   before_action :set_employee, only: %i[ new index create ]
 
+  def contracts_index
+    @contracts = Contract.all
+  end
+
   def index
-    @contracts = @employee.contracts
+    @search = params[:q]
+    @contracts = if @search.blank?
+      @employee.contracts
+    else
+      @employee.contracts
+    end
   end
 
   def new

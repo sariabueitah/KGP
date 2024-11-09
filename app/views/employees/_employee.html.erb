@@ -1,26 +1,39 @@
 <div id="<%= dom_id employee %>">
+  <div class="flex">
+    <div class="rounded border-gray-400 bg-gray-300 mr-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-40 p-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+      </svg>
+    </div>
+    <table class="mx-2">
+      <tr>
+        <td>Name:</strong>
+        <td class="px-4"><%= employee.full_name %></td>
+      </tr>
+      <tr>
+        <td>Name Arabic:</td>
+        <td class="px-4"><%= employee.ar_full_name %></td>
+      </tr>
+      <tr>
+        <td>Position:</td>
+        <td class="px-4"><%= employee.position.title %></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td class="px-4"><%= employee.email %></td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td class="px-4"><%= employee.phone_number %></td>
+      </tr>
+    </table>
+  </div>
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= employee.first_name %> <%= employee.father_name %> <%= employee.grandfather_name %> <%= employee.family_name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name Arabic:</strong>
-    <%= employee.ar_first_name %> <%= employee.ar_father_name %> <%= employee.ar_grandfather_name %> <%= employee.ar_family_name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= employee.email%>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">National ID:</strong>
+    <strong class="block mb-1">National ID:</strong>
     <%= employee.nid %>
   </p>
   <p class="my-5">
-    <strong class="block font-medium mb-1">Phone Number:</strong>
-    <%= employee.phone_number %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Emergancy Phone Number:</strong>
+    <strong class="block mb-1">Emergancy Phone Number:</strong>
     <%= employee.e_phone_number %>
   </p>
 </div>

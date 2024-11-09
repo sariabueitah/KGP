@@ -13,6 +13,21 @@ class Employee < ApplicationRecord
   validates :nid, presence: true, if: -> { national }
   validates :nationality, :passport_number, presence: true, unless: -> { national }
 
+  include PgSearch::Model
+  pg_search_scope :search_employee,
+  against: [
+    :first_name, :family_name,
+    :ar_first_name, :ar_family_name,
+    :nid
+  ],
+  associated_against: {
+    position: :title
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
+
 
   def full_name
     (first_name + " " + father_name + " " + grandfather_name + " " + family_name).titleize

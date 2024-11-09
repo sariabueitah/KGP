@@ -1,16 +1,50 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
-    <%= link_to "Employee Contract", new_employee_contract_path(@employee.id) %>
-    <%= link_to "Employee Advance", new_employee_advance_path(@employee.id) %>
-    <%= link_to "Employee Bank", new_employee_bank_path(@employee.id) %>
-    <%= render @employee %>
-    <%= link_to "Edit this employee", edit_employee_path(@employee), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to employees", employees_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this employee", @employee, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
+<div class="mx-auto w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <%= render @employee %>
+  <%= link_to "Edit this employee", edit_employee_path(@employee), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back to employees", employees_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <div class="inline-block ml-2">
+    <%= button_to "Destroy this employee", @employee, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
   </div>
+  <div class="mt-2 ">
+    <%= link_to "Employee Contract", new_employee_contract_path(@employee.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%= link_to "Employee Advance", new_employee_advance_path(@employee.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%= link_to "Employee Bank", new_employee_bank_path(@employee.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+  </div>
+</div>
+<div class="text-center text-gray-500 border-b border-gray-200">
+  <ul class="flex flex-wrap -mb-px">
+    <li class="me-2">
+      <%= link_to "Contracts", employee_contracts_path(@employee), 
+      class: "inline-block p-4 border-b-2 rounded-t-lg text-blue-600  border-blue-600 active", 
+      data: {
+        turbo_method: :get, 
+        turbo_stream: true
+      }
+      %>
+    </li>
+    <li class="me-2">
+      <%= link_to "Bank Information", employee_banks_path(@employee), 
+      class: "inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300", 
+      data: {
+        turbo_method: :get, 
+        turbo_stream: true
+      }
+      %>
+    </li>
+    <li class="me-2">
+      <%= link_to "Advances", employee_advances_path(@employee), 
+      class: "inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300", 
+      data: {
+        turbo_method: :get, 
+        turbo_stream: true
+      }
+      %>
+    </li>
+  </ul>
+</div>
+<div id="employee-tabs">
+  <%= render partial: "employees/contracts/index", locals:{ employee: @employee, contracts: @employee.contracts } %>
 </div>

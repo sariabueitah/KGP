@@ -1,0 +1,5 @@
+<%= turbo_stream.update "general-search" do %>
+  <% @employees.each do |employee| %>
+    <%= render "employee_row", employee: employee %>
+  <% end %>
+<% end %>

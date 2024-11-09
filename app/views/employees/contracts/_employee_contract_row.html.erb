@@ -1,0 +1,8 @@
+<tr id="<%= dom_id contract %>" class="hover:bg-gray-100">
+  <td class="whitespace-nowrap text-sm font-medium"><%= Position.find(contract.position_id).title %></td>
+  <td class="whitespace-nowrap text-sm font-medium"><%= contract.salary %></td>
+  <td class="whitespace-nowrap text-sm font-medium"><%= contract.start_date %></td>
+  <td class="whitespace-nowrap text-sm font-medium"><%= contract.end_date %></td>
+  <td class="whitespace-nowrap text-sm font-medium"><%= contract.active %></td>
+  <td class="whitespace-nowrap text-sm font-medium"><%= link_to "Show", employee_contract_path(contract), class: "my-2 font-medium", target: "_top" %></td>
+</tr>

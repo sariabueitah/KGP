@@ -3,16 +3,5 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
   <% content_for :title, "Advances" %>
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl"><%= @employee.full_name %> Advances</h1>
-    <%= link_to "New advance", new_employee_advance_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-  <div id="advances" class="min-w-full">
-    <% @advances.each do |advance| %>
-      <%= render advance %>
-      <p>
-        <%= link_to "Show this advance", employee_advance_path(advance), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
-  </div>
+  <%= render partial: "index", locals:{ employee: @employee, advances: @advances } %>
 </div>

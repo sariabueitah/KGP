@@ -2,8 +2,17 @@ class Employees::AdvancesController < ApplicationController
   before_action :set_advance, only: %i[ show edit update destroy ]
   before_action :set_employee, only: %i[ new index create ]
 
+  def advances_index
+    @advances = Advance.all
+  end
+
   def index
-    @advances = @employee.advances
+    @search = params[:q]
+    @advances = if @search.blank?
+      @employee.advances
+    else
+      @employee.advances
+    end
   end
 
   def new

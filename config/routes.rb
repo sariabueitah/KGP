@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   root "page#dashboard"
+
+  # Routes for fetching and searching for countries
   get "/countries", to: "page#countries"
   get "/countries/:search", to: "page#countries"
 
+  # Routes for pages that shows all contracts and advances for all employees
+  get "/employees/contracts", to: "employees/contracts#contracts_index"
+  get "/employees/advances", to: "employees/advances#advances_index"
+
+  # Routes for contracts, advances, banks, and positions with the employees as prefix to avoid deep nesting in the future
+  # eg. employees/contracts/:contract_id/edit
   scope module: "employees", path: "employees", as: "employee" do
     resources :contracts, only: [ :show, :edit, :update, :destroy ]
     resources :advances, only: [ :show, :edit, :update, :destroy ]
@@ -10,6 +18,8 @@ Rails.application.routes.draw do
     resources :positions
   end
 
+  # Routes for Employees CRUD with nested routes for associated models
+  # eg. employees/:employee_id/contracts/new
   resources :employees do
     scope module: :employees do
       resources :contracts, only: [ :index, :new, :create ]
@@ -17,9 +27,6 @@ Rails.application.routes.draw do
       resources :banks, only: [ :index, :new, :create ]
     end
   end
-
-
-
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

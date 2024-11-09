@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_29_110008) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_09_151309) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "fuzzystrmatch"
+  enable_extension "pg_catalog.plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "advances", force: :cascade do |t|
     t.float "amount"
@@ -22,6 +24,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_29_110008) do
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed"
     t.index ["employee_id"], name: "index_advances_on_employee_id"
   end
 
