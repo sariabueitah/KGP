@@ -1,5 +1,6 @@
 class PageController < ApplicationController
   def dashboard
+    reset_session
   end
 
   def countries

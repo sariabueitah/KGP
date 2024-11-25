@@ -1,17 +1,18 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[ show edit update destroy ]
-
+  include Searchable
     def new
       @employee = Employee.new
     end
 
     def index
-      @search = params[:q]
-      @employees = if @search.blank?
-        Employee.all
-      else
-        Employee.search_employee(params[:q])
-      end
+      # @search = params[:q]
+      # @employees = if @search.blank?
+      #   Employee.all
+      # else
+      #   search!(Employee)
+      # end
+      @employees = search!(Employee)
     end
 
     def show

@@ -1,11 +1,9 @@
 class Employee < ApplicationRecord
+  include Searchable
+
   has_many :contracts
   has_one :bank
   has_many :advances
-
-  # link employee to position through Contract only with the active contact to make it accessable to pg_search
-  has_one :active_contract, -> { where active: true }, class_name: "Contract"
-  has_one :position, through: :active_contract, class_name: "Position"
 
   # validations
   validates :first_name, :father_name, :grandfather_name, :family_name, :ar_first_name, :ar_father_name, :ar_grandfather_name, :ar_family_name, :email, :phone_number, :e_phone_number, presence: true
@@ -13,20 +11,14 @@ class Employee < ApplicationRecord
   validates :nid, presence: true, if: -> { national }
   validates :nationality, :passport_number, presence: true, unless: -> { national }
 
-  include PgSearch::Model
-  pg_search_scope :search_employee,
-  against: [
-    :first_name, :family_name,
-    :ar_first_name, :ar_family_name,
-    :nid
-  ],
-  associated_against: {
-    position: :title
-  },
-  using: {
-    tsearch: { prefix: true }
-  }
+  # the searchable fields for Searchable concern
+  SEARCH_PARAMS = %i[text_search active column direction].freeze
+  SEARCH_COLUMNS = {
+    "employees" => [ "first_name", "family_name", "ar_first_name", "ar_family_name", "nid" ],
+    "positions" => [ "title" ]
+  }.freeze
 
+  include Searchable
 
 
   def full_name
@@ -43,5 +35,33 @@ class Employee < ApplicationRecord
 
   def ar_short_name
     ar_first_name + " " + ar_family_name
+  end
+
+  def position
+     self.contracts.last.position
+  end
+
+  def self.active(active)
+    if active == "true"
+      where("contracts.end_date >= now()")
+    elsif active == "false"
+      where("contracts.end_date <= now()")
+    else
+      where("")
+    end
+  end
+
+  # change this to the search functionality
+  def self.search(params)
+    if params.empty?
+      Employee.all
+    else
+      text_search = Employee.text_search_query(params["text_search"])
+      Employee.joins(contracts: [ :position ])
+      .where("contracts.end_date = (SELECT MAX(contracts.end_date) from contracts where employees.id = contracts.employee_id)")
+      .where(text_search[0], *text_search[1])
+      .active(params["active"])
+      .order("#{params['column']} #{params['direction']}")
+    end
   end
 end
