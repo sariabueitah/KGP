@@ -15,7 +15,7 @@ module Searchable
         end
       end
 
-      terms = text_search.split(" ").reject { |item| item.blank? }
+      terms =  text_search.split(" ").reject { |item| item.blank? }
       where_clause = terms.map { |x| "(" + flat_columns.map { |c| "#{c} like ?" }.join(" OR ") + ")" }.join(" AND ")
       search_params = terms.map { |x| flat_columns.map { |c| "%#{x}%" } }.flatten
       return where_clause, search_params

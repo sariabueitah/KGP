@@ -1,18 +1,14 @@
 class Employees::ContractsController < ApplicationController
   before_action :set_contract, only: %i[ show edit update destroy ]
   before_action :set_employee, only: %i[ new index create ]
+  include Searchable
 
   def contracts_index
     @contracts = Contract.all
   end
 
   def index
-    @search = params[:q]
-    @contracts = if @search.blank?
-      @employee.contracts
-    else
-      @employee.contracts
-    end
+    @contracts = search!(Contract)
   end
 
   def new
@@ -69,6 +65,6 @@ class Employees::ContractsController < ApplicationController
     @employee = Employee.find(params[:employee_id])
   end
   def contract_params
-    params.require(:contract).permit(:start_date, :end_date, :salary, :active, :position_id)
+    params.require(:contract).permit(:start_date, :end_date, :salary, :position_id, :employee_id)
   end
 end

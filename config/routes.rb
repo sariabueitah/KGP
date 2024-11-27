@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "page#dashboard"
-
+  post "/session_reset", to: "page#session_reset"
   # Routes for fetching and searching for countries
   get "/countries", to: "page#countries"
   get "/countries/:search", to: "page#countries"

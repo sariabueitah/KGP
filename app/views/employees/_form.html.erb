@@ -55,6 +55,22 @@
       <%= form.text_field :e_phone_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
     </div>
     <div class="col-span-1">
+      <%= form.label :social_security_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.text_field :social_security_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    </div>
+    <div class="col-span-1">
+      <%= form.label :income_tax_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.text_field :income_tax_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    </div>
+    <div class="col-span-1">
+      <%= form.label :marital_status, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.select :marital_status, options_for_select(Employee.marital_statuses.map {|k, v| [k.humanize.capitalize, v]}), {}, {class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} %>
+    </div>
+    <div class="col-span-1">
+      <%= form.label :has_dependants, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
+      <%= form.check_box :has_dependants, class: "" %>
+    </div>
+    <div class="col-span-1">
       <%= form.label :national, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
       <%= form.check_box :national, class: "" %>
     </div>

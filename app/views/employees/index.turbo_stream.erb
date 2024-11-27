@@ -3,16 +3,16 @@
     <tr>
       <th class="text-start text-xs font-medium">
         <div>
-          <%= build_order_link(column: "employees.first_name", label: "Name", model: "employee", url: "employees_path") %>
+          <%= build_order_link(label: "Name", model: "employee", url: "employees_path", params: {column: "employees.first_name"}) %>
           <%= sort_indicator("employee", "employees.first_name") %>
         </div>
         <div>
-          <%= build_order_link(column: "employees.ar_first_name", label: "Name arabic", model: "employee", url: "employees_path") %>
+          <%= build_order_link(label: "Name arabic", model: "employee", url: "employees_path", params: {column: "employees.ar_first_name"}) %>
           <%= sort_indicator("employee", "employees.ar_first_name") %>
         </div>
       </th>
       <th class="text-start text-xs font-medium">
-        <%= build_order_link(column: "positions.title", label: "Position", model: "employee", url: "employees_path") %>
+        <%= build_order_link(label: "Position", model: "employee", url: "employees_path", params: {column: "positions.title"}) %>
         <%= sort_indicator("employee", "positions.title") %>
       </th>
       <th class="text-start text-xs font-medium">Email</th>

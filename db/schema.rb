@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_09_151309) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_27_211611) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
   enable_extension "pg_catalog.plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_09_151309) do
     t.date "start_date"
     t.date "end_date"
     t.float "salary"
-    t.boolean "active"
     t.bigint "employee_id"
     t.bigint "position_id"
     t.datetime "created_at", null: false
@@ -69,6 +68,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_09_151309) do
     t.boolean "national", default: true
     t.string "nationality"
     t.string "passport_number"
+    t.text "social_security_number"
+    t.text "income_tax_number"
+    t.integer "marital_status"
+    t.boolean "has_dependants"
   end
 
   create_table "paycuts", force: :cascade do |t|

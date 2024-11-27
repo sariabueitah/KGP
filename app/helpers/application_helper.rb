@@ -1,10 +1,11 @@
 module ApplicationHelper
-  def build_order_link(column:, label:, model:, url:)
-    if column == session.dig("#{model}_search_params", "column")
-      link_to(label, self.send(url, column: column, direction: next_direction(model)), data: { turbo_stream: true })
+  def build_order_link(label:, model:, url:, params:)
+    if params[:column] == session.dig("#{model}_search_params", "column")
+      params[:direction] = next_direction(model)
     else
-      link_to(label, self.send(url, column: column, direction: "asc"), data: { turbo_stream: true })
+      params[:direction] = "asc"
     end
+    link_to(label, self.send(url, params), data: { turbo_stream: true })
   end
 
   def next_direction(model)
@@ -12,7 +13,6 @@ module ApplicationHelper
   end
 
   def sort_indicator(model, column)
-     x = "#{model}_search_params"
     if column == session["#{model}_search_params"]["column"]
       if session["#{model}_search_params"]["direction"] == "asc"
         ('<span class="inline-block align-middle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
