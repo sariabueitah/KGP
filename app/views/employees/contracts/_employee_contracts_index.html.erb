@@ -24,34 +24,6 @@
         </div>
       </div>
     <% end %>
-    <table id="contracts" class="min-w-full divide-y">
-      <thead>
-        <tr>
-          <th class="text-start text-xs font-medium">
-            <%= build_order_link(label: "Position", model: "contract", url: "employee_contracts_path", params: {employee_id: employee.id, column: "positions.title"}) %>
-            <%= sort_indicator("contract", "positions.title") %>
-          </th>
-          <th class="text-start text-xs font-medium">
-            <%= build_order_link(label: "Salary", model: "contract", url: "employee_contracts_path", params: {employee_id: employee.id, column: "contracts.salary"}) %>
-            <%= sort_indicator("contract", "contracts.salary") %>
-          </th>
-          <th class="text-start text-xs font-medium">
-            <%= build_order_link(label: "Start Date", model: "contract", url: "employee_contracts_path", params: {employee_id: employee.id, column: "contracts.start_date"}) %>
-            <%= sort_indicator("contract", "contracts.start_date") %>
-          </th>
-          <th class="text-start text-xs font-medium">
-            <%= build_order_link(label: "End Date", model: "contract", url: "employee_contracts_path", params: {employee_id: employee.id, column: "contracts.end_date"}) %>
-            <%= sort_indicator("contract", "contracts.end_date") %>
-          </th>
-          <th class="text-start text-xs font-medium">Active</th>
-          <th class="text-start text-xs font-medium">Actions</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y" id="general-search">
-        <% contracts.each do |contract| %>
-          <%= render partial: "employees/contracts/employee_contract_row", locals:{contract: contract}%>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render partial: "employee_contracts_table", locals:{ employee: employee, contracts: contracts } %>
   </div>
 </div>

@@ -24,7 +24,7 @@
       </thead>
       <tbody class="divide-y" id="general-search">
         <% @contracts.each do |contract| %>
-          <%= render partial: "contract_row", locals: {contract: contract} %>
+          <%= render partial: "contract_index_row", locals: {contract: contract} %>
         <% end %>
       </tbody>
     </table>

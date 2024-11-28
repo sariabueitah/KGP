@@ -1,3 +1,6 @@
+<%= turbo_stream.update "contracts" do %>
+  <%= render partial: "employees/contracts/employee_contracts_table", locals:{ employee: @employee, contracts: @contracts } %>
+<% end %>
 <%= turbo_stream.update "employee-tabs" do %>
-  <%= render partial: "employees/contracts/index", locals:{ employee: @employee, contracts: @contracts } %>
+  <%= render partial: "employees/contracts/employee_contracts_index", locals:{ employee: @employee, contracts: @contracts } %>
 <% end %>

@@ -4,6 +4,6 @@
   <% end %>
   <% content_for :title, "Contracts" %>
   <%= turbo_frame_tag "load_employee_contracts" do %>
-    <%= render partial: "index", locals:{ employee: @employee, contracts: @contracts } %>
+    <%= render partial: "employee_contracts_index", locals:{ employee: @employee, contracts: @contracts } %>
   <%end%>
 </div>

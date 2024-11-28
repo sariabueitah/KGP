@@ -1,0 +1,32 @@
+<table id="employees" class="min-w-full divide-y">
+  <thead>
+    <tr>
+      <th class="text-start text-xs font-medium">
+        <div>
+          <%= build_order_link(label: "Name", model: "employee", url: "employees_path", params: {column: "employees.first_name"}) %>
+          <%= sort_indicator("employee", "employees.first_name") %>
+        </div>
+        <div>
+          <%= build_order_link(label: "Name arabic", model: "employee", url: "employees_path", params: {column: "employees.ar_first_name"}) %>
+          <%= sort_indicator("employee", "employees.ar_first_name") %>
+        </div>
+      </th>
+      <th class="text-start text-xs font-medium">
+        <%= build_order_link(label: "Position", model: "employee", url: "employees_path", params: {column: "positions.title"}) %>
+        <%= sort_indicator("employee", "positions.title") %>
+      </th>
+      <th class="text-start text-xs font-medium">Email</th>
+      <th class="text-start text-xs font-medium">National ID</th>
+      <th class="text-start text-xs font-medium">
+        <div>Phone Number</div>
+        <div>Emergency Phone Number</div>
+      </th>
+      <th class="text-start text-xs font-medium">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y" id="general-search">
+    <% @employees.each do |employee| %>
+      <%= render "employee_row", employee: employee %>
+    <% end %>
+  </tbody>
+</table>
