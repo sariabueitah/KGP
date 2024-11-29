@@ -1,0 +1,3 @@
+<%= turbo_stream.update "contracts" do %>
+  <%= render partial: "employees/contracts/contracts_index_table", locals:{ contracts: @contracts } %>
+<% end %>

@@ -4,7 +4,7 @@ class Employees::ContractsController < ApplicationController
   include Searchable
 
   def contracts_index
-    @contracts = Contract.all
+    @contracts = search!(Contract)
   end
 
   def index

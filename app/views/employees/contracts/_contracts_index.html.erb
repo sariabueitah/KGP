@@ -1,0 +1,33 @@
+<div class="flex flex-col my-2">
+  <%= form_with url: employees_contracts_path, method: :get, data: {controller: "general-search", turbo_stream: true} do |f| %>
+    <div class="flex my-2 justify-between">
+      <div class="py-3">
+        <input data-action="click->general-search#update" type="radio" id="radio1" class="peer/all hidden" name="active" value="" <%= "checked" if session.dig('contract_search_params', 'active') == "" || session.dig('contract_search_params', 'active').blank? %>>
+        <label class="inline-block bg-gray-300 hover:bg-gray-400 py-1 px-3 cursor-pointer peer-checked/all:bg-blue-600 peer-checked/all:hover:bg-blue-800 peer-checked/all:text-white rounded" for="radio1">All</label>
+        <input data-action="click->general-search#update" type="radio" id="radio2" class="peer/true hidden" name="active" value="true" <%= "checked" if session.dig('contract_search_params', 'active') == "true"%>>
+        <label class="inline-block bg-gray-300 hover:bg-gray-400 py-1 px-3 cursor-pointer peer-checked/true:bg-blue-600 peer-checked/true:hover:bg-blue-800 peer-checked/true:text-white rounded" for="radio2">Active</label>
+        <input data-action="click->general-search#update" type="radio" id="radio3" class="peer/false hidden" name="active" value="false" <%= "checked" if session.dig('contract_search_params', 'active') == "false"%>>
+        <label class="inline-block bg-gray-300 hover:bg-gray-400 py-1 px-3 cursor-pointer peer-checked/false:bg-blue-600 peer-checked/false:hover:bg-blue-800 peer-checked/false:text-white rounded" for="radio3">Archived</label>
+      </div>
+      <div class="w-1/4 relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+        </div>
+        <input name="year" data-action="input->general-search#update" type="number" min="1900" max="2900" class="block w-full justify-self-end p-4 pr-24 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search By Year" value="<%= session.dig('contract_search_params', 'year') %>"/>
+        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+      </div>
+      <div class="w-6/12 relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+        </div>
+        <input name="text_search" data-action="input->general-search#update" type="search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search for Name or Position or National ID" value="<%= session.dig('contract_search_params', 'text_search') %>"/>
+        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+      </div>
+    </div>
+  <% end %>
+  <%= render partial: "contracts_index_table", locals: {contract: contract} %>
+</div>

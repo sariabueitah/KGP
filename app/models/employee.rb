@@ -14,7 +14,7 @@ class Employee < ApplicationRecord
   validates :nationality, :passport_number, presence: true, unless: -> { national }
 
   # the searchable fields for Searchable concern
-  SEARCH_PARAMS = %i[text_search active column direction].freeze
+  SEARCH_PARAMS = %i[text_search active column direction action].freeze
   SEARCH_COLUMNS = {
     "employees" => [ "first_name", "family_name", "ar_first_name", "ar_family_name", "nid" ],
     "positions" => [ "title" ]
@@ -52,15 +52,11 @@ class Employee < ApplicationRecord
 
   # change this to the search functionality
   def self.search(params)
-    if params.empty?
-      Employee.all
-    else
-      text_search = params["text_search"].blank? ? [ [], [] ] : Employee.text_search_query(params["text_search"])
-      Employee.joins(contracts: [ :position ])
-      .where("contracts.end_date = (SELECT MAX(contracts.end_date) from contracts where employees.id = contracts.employee_id)")
-      .where(text_search[0], *text_search[1])
-      .active(params["active"])
-      .order("#{params['column']} #{params['direction']}")
-    end
+    text_search = params["text_search"].blank? ? [ [], [] ] : Employee.text_search_query(params["text_search"])
+    Employee.joins(contracts: [ :position ])
+    .where("contracts.end_date = (SELECT MAX(contracts.end_date) from contracts where employees.id = contracts.employee_id)")
+    .where(text_search[0], *text_search[1])
+    .active(params["active"])
+    .order("#{params['column']} #{params['direction']}")
   end
 end
