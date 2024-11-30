@@ -3,9 +3,13 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
   <% content_for :title, "Employees" %>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-3">
     <h1 class="font-bold text-4xl">Employees</h1>
-    <%= link_to "New employee", new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to new_employee_path, class: "text-white bg-blue-600 rounded-full block p-3 hover:bg-blue-800", title: "Add Employee" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+      </svg>
+    <%end%>
   </div>
   <div>
     <%= form_with url: employees_path, method: :get, data: {controller: "general-search", turbo_stream: true} do |f| %>

@@ -28,12 +28,31 @@
       </tr>
     </table>
   </div>
-  <p class="my-5">
-    <strong class="block mb-1">National ID:</strong>
-    <%= employee.nid %>
-  </p>
-  <p class="my-5">
-    <strong class="block mb-1">Emergancy Phone Number:</strong>
-    <%= employee.e_phone_number %>
-  </p>
+  <table class="mx-2 my-2">
+    <tr>
+      <td>Has Dependants:</strong>
+      <td class="px-4"><%= employee.has_dependants %></td>
+      <td>Marital Status:</strong>
+      <td class="px-4"><%= employee.marital_status %></td>
+    </tr>
+    <tr>
+      <td>Social Security Number:</strong>
+      <td class="px-4"><%= employee.social_security_number %></td>
+      <td>Income Tax Number:</strong>
+      <td class="px-4"><%= employee.income_tax_number %></td>
+    </tr>
+    <% if employee.national %>
+      <tr>
+        <td>National ID:</strong>
+        <td class="px-4"><%= employee.nid %></td>
+      </tr>
+    <%else%>
+      <tr>
+        <td>Nationality:</td>
+        <td class="px-4"><%= employee.nationality %></td>
+        <td>Passport Number:</td>
+        <td class="px-4"><%= employee.passport_number %></td>
+      </tr>
+    <%end%>
+  </table>
 </div>

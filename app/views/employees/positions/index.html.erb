@@ -7,12 +7,20 @@
     <h1 class="font-bold text-4xl">Positions</h1>
     <%= link_to "New position", new_employee_position_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
-  <div id="positions" class="min-w-full">
-    <% @positions.each do |position| %>
-      <%= render position %>
-      <p>
-        <%= link_to "Show this position", employee_position_path(position), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
-  </div>
+  <table id="positions" class="min-w-full divide-y">
+    <thead>
+      <tr>
+        <th class="text-start text-xs font-medium">title</th>
+        <th class="text-start text-xs font-medium">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @positions.each do |position| %>
+        <tr id="<%= dom_id position %>" class="hover:bg-gray-100">
+          <td class="whitespace-nowrap text-sm font-medium"><%= position.title %></td>
+          <td class="whitespace-nowrap text-sm font-medium"><%= link_to "Show", employee_position_path(position), class: "my-2 font-medium" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
