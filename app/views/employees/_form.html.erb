@@ -9,89 +9,102 @@
       </ul>
     </div>
   <% end %>
-  <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5 my-5">
-    <div class="col-span-1">
-      <%= form.label :first_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :first_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+  <div class="space-y-12">
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 border-b gap-x-12 border-gray-900/10 pb-12">
+      <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full mt-12">Personal Information</h2>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :first_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :first_name, "First Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :father_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :father_name, "Father Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :grandfather_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :grandfather_name, "Grandfather Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :family_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :family_name, "Family Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :ar_first_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :ar_first_name, "Arabic First Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :ar_father_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :ar_father_name, "Arabic Father Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :ar_grandfather_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :ar_grandfather_name, "Arabic Grandfather Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :ar_family_name, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :ar_family_name, "Arabic Family Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.select :marital_status, options_for_select(Employee.marital_statuses.map {|k, v| [k.humanize.capitalize, k]}), {:include_blank => true}, { class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"} %>
+        <%= form.label :marital_status, "Marital Status", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-has-[option[value='']:checked]:scale-100 peer-has-[option[value='']:checked]:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
     </div>
-    <div class="col-span-1">
-      <%= form.label :father_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :father_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 border-b gap-x-12 border-gray-900/10 pb-12">
+      <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full">Contact Information</h2>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :email, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :email, class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :phone_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :phone_number, "Phone Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :e_phone_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :e_phone_number, "Emergency Phone Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
     </div>
-    <div class="col-span-1">
-      <%= form.label :grandfather_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :grandfather_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 border-b gap-x-12 border-gray-900/10 pb-12">
+      <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full">Nationality Information</h2>
+      <div class="relative z-0 my-6">
+        <%= form.check_box :national %>
+        <%= form.label :national %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :national_id, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :national_id, class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6" data-controller="country">
+        <%= form.text_field :nationality, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: {
+          action: "focus->country#showList input->country#filterCountries blur->country#hideList keydown.down->country#inputKeyControl",
+          country_target: "input"
+        }, tabIndex: "0" %>
+        <%= form.label :nationality, class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :passport_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :passport_number, "Passport Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
     </div>
-    <div class="col-span-1">
-      <%= form.label :family_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :family_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :arabic_first_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :ar_first_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :arabic_father_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :ar_father_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :arabic_grandfather_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :ar_grandfather_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :arabic_family_name, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :ar_family_name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :email, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.email_field :email, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :phone_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :phone_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :emergancy_phone_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :e_phone_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :social_security_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :social_security_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :income_tax_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :income_tax_number, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :marital_status, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.select :marital_status, options_for_select(Employee.marital_statuses.map {|k, v| [k.humanize.capitalize, k]}), {}, {class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :has_dependants, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.check_box :has_dependants, class: "" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :national, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.check_box :national, class: "" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :national_id, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :nid, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1" data-controller="country">
-      <%= form.label :nationality, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :nationality, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", data: {
-        action: "focus->country#showList input->country#filterCountries blur->country#hideList keydown.down->country#inputKeyControl",
-        country_target: "input"
-      }, tabIndex: "0" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :passport_number, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :passport_number, class: "ppearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 border-b gap-x-12 border-gray-900/10 pb-12">
+      <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full">Tax and Social Security information</h2>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :income_tax_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :income_tax_number,"Income Tax Number" ,class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.check_box :has_dependants %>
+        <%= form.label :has_dependants %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :social_security_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :social_security_number, "Social Security Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
     </div>
   </div>
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
     <%= link_to "Back to employees", employees_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium cursor-pointer ring-2 hover:ring-blue-500" %>
   </div>
+</div>
 <% end %>

@@ -25,7 +25,6 @@ export default class extends Controller {
   }
 
   setList(){
-    this.element.setAttribute("class", "relative")
     this.ulTarget = document.createElement("ul")
     this.ulTarget.setAttribute("class", "transparent-scroll hidden absolute top-19 left-0 w-full max-h-52 overflow-x-hidden overflow-y-scroll bg-gray-100 px-2")
     this.element.appendChild(this.ulTarget)
