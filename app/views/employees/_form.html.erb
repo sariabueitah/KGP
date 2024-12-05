@@ -1,7 +1,7 @@
 <%= form_with(model: employee, class: "contents") do |form| %>
   <% if employee.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+    <div id="error_explanation" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      <%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:
       <ul>
         <% employee.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -66,13 +66,13 @@
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 border-b gap-x-12 border-gray-900/10 pb-12">
       <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full">Nationality Information</h2>
-      <div class="relative z-0 my-6">
-        <%= form.check_box :national %>
-        <%= form.label :national %>
+      <div class="relative z-0 my-6 py-2">
+        <%= form.check_box :national, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+        <%= form.label :national, class: "ms-2 text-sm font-medium text-gray-500"%>
       </div>
       <div class="relative z-0 my-6">
-        <%= form.text_field :national_id, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
-        <%= form.label :national_id, class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+        <%= form.text_field :nid, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :nid, "National ID Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
       </div>
       <div class="relative z-0 my-6" data-controller="country">
         <%= form.text_field :nationality, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: {
@@ -91,14 +91,22 @@
       <div class="relative z-0 my-6">
         <%= form.text_field :income_tax_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
         <%= form.label :income_tax_number,"Income Tax Number" ,class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+        <div class="absolute end-0 bottom-2.5">
+          <%= form.check_box :income_tax_number_skip, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+          <%= form.label :income_tax_number_skip, "Skip", class: "ms-2 text-sm font-medium text-gray-500"%>
+        </div>
       </div>
-      <div class="relative z-0 my-6">
-        <%= form.check_box :has_dependants %>
-        <%= form.label :has_dependants %>
+      <div class="relative z-0 my-6 py-2">
+        <%= form.check_box :has_dependants, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+        <%= form.label :has_dependants, class: "ms-2 text-sm font-medium text-gray-500"%>
       </div>
       <div class="relative z-0 my-6">
         <%= form.text_field :social_security_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
         <%= form.label :social_security_number, "Social Security Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+        <div class="absolute end-0 bottom-2.5">
+          <%= form.check_box :social_security_number_skip, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+          <%= form.label :social_security_number_skip, "Skip", class: "ms-2 text-sm font-medium text-gray-500"%>
+        </div>
       </div>
     </div>
   </div>

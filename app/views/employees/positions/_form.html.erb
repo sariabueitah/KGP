@@ -1,7 +1,7 @@
 <%= form_with(model: [:employee, position], class: "contents") do |form| %>
   <% if position.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:</h2>
+    <div id="error_explanation" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      <%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:
       <ul>
         <% position.errors.each do |error| %>
           <li><%= error.full_message %></li>

@@ -1,7 +1,7 @@
 <%= form_with(model: [employee, bank], class: "contents") do |form| %>
   <% if bank.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+    <div id="error_explanation" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      <%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:
       <ul>
         <% bank.errors.each do |error| %>
           <li><%= error.full_message %></li>
