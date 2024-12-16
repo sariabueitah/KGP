@@ -5,16 +5,13 @@ Rails.application.routes.draw do
   get "/countries", to: "page#countries"
   get "/countries/:search", to: "page#countries"
 
-  # Routes for pages that shows all contracts and advances for all employees
+  # Routes for pages that shows all contracts for all employees
   get "/employees/contracts", to: "employees/contracts#contracts_index"
-  get "/employees/advances", to: "employees/advances#advances_index"
 
-  # Routes for contracts, advances, banks, and positions with the employees as prefix to avoid deep nesting in the future
+  # Routes for contracts, and positions with the employees as prefix to avoid deep nesting in the future
   # eg. employees/contracts/:contract_id/edit
   scope module: "employees", path: "employees", as: "employee" do
     resources :contracts, only: [ :show, :edit, :update, :destroy ]
-    resources :advances, only: [ :show, :edit, :update, :destroy ]
-    resources :banks, only: [ :show, :edit, :update, :destroy ]
     resources :positions
   end
 
@@ -23,8 +20,6 @@ Rails.application.routes.draw do
   resources :employees do
     scope module: :employees do
       resources :contracts, only: [ :index, :new, :create ]
-      resources :advances, only: [ :index, :new, :create ]
-      resources :banks, only: [ :index, :new, :create ]
     end
   end
 

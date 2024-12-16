@@ -1,6 +1,0 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing Advance</h1>
-  <%= render "form", advance: @advance, employee: :employee %>
-  <%= link_to "Show this advance", employee_advance_path(@advance), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to advances", employee_advances_path(@advance.employee_id), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>

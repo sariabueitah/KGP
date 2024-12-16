@@ -2,8 +2,6 @@ class Employee < ApplicationRecord
   include Searchable
 
   has_many :contracts
-  has_one :bank
-  has_many :advances
   has_many :notifications, as: :notifiable
 
   enum :marital_status, %i[single married widowed divorced]

@@ -10,38 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_05_181604) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_16_164258) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "fuzzystrmatch"
   enable_extension "pg_catalog.plpgsql"
-  enable_extension "pg_trgm"
 
-  create_table "advances", force: :cascade do |t|
-    t.float "amount"
-    t.float "payment"
-    t.date "start_date"
-    t.date "end_date"
-    t.bigint "employee_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "completed"
-    t.index ["employee_id"], name: "index_advances_on_employee_id"
-  end
-
-  create_table "banks", force: :cascade do |t|
+  create_table "allowances", force: :cascade do |t|
     t.string "name"
-    t.string "branch"
-    t.string "iban"
-    t.bigint "employee_id"
+    t.string "ar_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_banks_on_employee_id"
   end
 
   create_table "contracts", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
     t.float "salary"
+    t.boolean "active"
     t.bigint "employee_id"
     t.bigint "position_id"
     t.datetime "created_at", null: false
@@ -63,19 +47,20 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_05_181604) do
     t.string "email"
     t.string "phone_number"
     t.string "e_phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "national", default: true
     t.string "nationality"
     t.string "passport_number"
-    t.text "social_security_number"
-    t.text "income_tax_number"
+    t.string "social_security_number"
+    t.string "income_tax_number"
     t.integer "marital_status"
     t.boolean "has_dependants"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notifications", force: :cascade do |t|
     t.string "message"
+    t.string "type"
     t.string "notifiable_type"
     t.bigint "notifiable_id"
     t.datetime "created_at", null: false
@@ -83,18 +68,22 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_05_181604) do
     t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable"
   end
 
-  create_table "paycuts", force: :cascade do |t|
-    t.string "reason"
-    t.boolean "recurring"
-    t.float "amount"
-    t.float "percent_amount"
+  create_table "positions", force: :cascade do |t|
+    t.string "title"
+    t.string "ar_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "positions", force: :cascade do |t|
-    t.string "title"
+  create_table "salary_allowances", force: :cascade do |t|
+    t.bigint "allowance_id"
+    t.float "amount"
+    t.boolean "tax_deductible"
+    t.boolean "social_security_deductible"
+    t.bigint "contract_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["allowance_id"], name: "index_salary_allowances_on_allowance_id"
+    t.index ["contract_id"], name: "index_salary_allowances_on_contract_id"
   end
 end

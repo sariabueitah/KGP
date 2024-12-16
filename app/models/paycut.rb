@@ -1,2 +1,0 @@
-class Paycut < ApplicationRecord
-end
