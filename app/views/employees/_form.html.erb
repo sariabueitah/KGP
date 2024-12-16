@@ -45,7 +45,7 @@
         <%= form.label :ar_family_name, "Arabic Family Name", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
       </div>
       <div class="relative z-0 my-6">
-        <%= form.select :marital_status, options_for_select(Employee.marital_statuses.map {|k, v| [k.humanize.capitalize, k]}), {:include_blank => true}, { class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"} %>
+        <%= form.select :marital_status, options_for_select(Employee.marital_statuses.map {|k, v| [k.humanize.capitalize, k]}, :selected => params[:employee] ? params[:employee][:marital_status] : nil), {:include_blank => true}, { class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"} %>
         <%= form.label :marital_status, "Marital Status", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-has-[option[value='']:checked]:scale-100 peer-has-[option[value='']:checked]:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
       </div>
     </div>
@@ -86,7 +86,7 @@
         <%= form.label :passport_number, "Passport Number", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
       </div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 border-b gap-x-12 border-gray-900/10 pb-12">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-12 pb-12">
       <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full">Tax and Social Security information</h2>
       <div class="relative z-0 my-6">
         <%= form.text_field :income_tax_number, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>

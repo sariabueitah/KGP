@@ -4,6 +4,7 @@ class Employee < ApplicationRecord
   has_many :contracts
   has_one :bank
   has_many :advances
+  has_many :notifications, as: :notifiable
 
   enum :marital_status, %i[single married widowed divorced]
 
@@ -29,6 +30,12 @@ class Employee < ApplicationRecord
   after_save :check_record
 
   def check_record
+    if @income_tax_number_skip == "1"
+      notifications.create(message: "Income Tax Number missing from employee #{short_name}")
+    end
+    if @social_security_number_skip == "1"
+      notifications.create(message: "Social Security Number missing from employee #{short_name}")
+    end
   end
 
   def full_name

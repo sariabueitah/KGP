@@ -35,7 +35,7 @@ class Employees::ContractsController < ApplicationController
   def update
     respond_to do |format|
       if @contract.update(contract_params)
-        format.html { redirect_to employee_contract_url(@contract), notice: "Contract was successfully updated." }
+        format.html { redirect_to employees_contracts_url(@contract), notice: "Contract was successfully updated." }
         format.json { render :show, status: :ok, location: @contract }
       else
         format.html { render :edit, status: :unprocessable_entity }

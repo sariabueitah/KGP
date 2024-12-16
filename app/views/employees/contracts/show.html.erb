@@ -6,8 +6,8 @@
     <%= render @contract %>
     <%= link_to "Edit this contract", edit_employee_contract_path(@contract), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Back to contracts", employee_contracts_path(@contract.employee_id), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this contract", employee_contract_path(@contract), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="mb-2 inline-block">
+      <%= button_to "Destroy this contract", employee_contract_path(@contract), method: :delete, form:{data:{turbo: false, controller: "confirmation", action: 'submit->confirmation#confirm', confirmation_message_value: "Are you sure you want to delete this Contract?"}}, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     </div>
   </div>
 </div>

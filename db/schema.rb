@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_27_211611) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_05_181604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
   enable_extension "pg_catalog.plpgsql"
@@ -72,6 +72,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_27_211611) do
     t.text "income_tax_number"
     t.integer "marital_status"
     t.boolean "has_dependants"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "message"
+    t.string "notifiable_type"
+    t.bigint "notifiable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable"
   end
 
   create_table "paycuts", force: :cascade do |t|

@@ -41,7 +41,10 @@ employees = Employee.create!(
       email: Faker::Internet.email,
       phone_number: Faker::PhoneNumber.phone_number,
       e_phone_number: Faker::PhoneNumber.phone_number,
-      national: true
+      national: true,
+      income_tax_number: Faker::Number.number(digits: 10),
+      social_security_number: Faker::Number.number(digits: 10),
+      marital_status: 1
     },
     {
       first_name: "fedaa",
@@ -56,7 +59,10 @@ employees = Employee.create!(
       email: Faker::Internet.email,
       phone_number: Faker::PhoneNumber.phone_number,
       e_phone_number: Faker::PhoneNumber.phone_number,
-      national: true
+      national: true,
+      income_tax_number: Faker::Number.number(digits: 10),
+      social_security_number: Faker::Number.number(digits: 10),
+      marital_status: 1
     },
     {
       first_name: "yamen",
@@ -71,7 +77,10 @@ employees = Employee.create!(
       email: Faker::Internet.email,
       phone_number: Faker::PhoneNumber.phone_number,
       e_phone_number: Faker::PhoneNumber.phone_number,
-      national: true
+      national: true,
+      income_tax_number: Faker::Number.number(digits: 10),
+      social_security_number: Faker::Number.number(digits: 10),
+      marital_status: 1
     },
     {
       first_name: "sohad",
@@ -86,7 +95,10 @@ employees = Employee.create!(
       email: Faker::Internet.email,
       phone_number: Faker::PhoneNumber.phone_number,
       e_phone_number: Faker::PhoneNumber.phone_number,
-      national: true
+      national: true,
+      income_tax_number: Faker::Number.number(digits: 10),
+      social_security_number: Faker::Number.number(digits: 10),
+      marital_status: 1
     }
   ]
 )
@@ -100,7 +112,6 @@ employees.each_with_index do |obj, index|
         start_date: Date.new(2024, 9, 1),
         end_date: Date.new(2025, 9, 1),
         salary: "300",
-        active: true,
         employee_id: obj.id,
         position: Position.find_by(title: "teacher")
       }

@@ -1,3 +1,20 @@
-<div class="fixed top-0 left-0 h-16 shadow-lg bg-white w-full pl-80 z-10">
-  <%= button_to "Reset Session", session_reset_path, class: "", remote: true%>
+<div class="top-0 left-0 h-16 shadow-lg bg-white w-full pl-80 z-10 absolute flex items-center justify-between">
+  <div>
+    <%= button_to "Reset Session", session_reset_path, class: "", remote: true%>
+  </div>
+  <div class="mr-10">
+    <div class="relative">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+      </svg>
+      <div class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full -top-1 -start-1"><%= Notification.all.count %></div>
+    </div>
+    <div class="hidden absolute right-10 z-10 mt-2 w-64 max-h-80 overflow-y-scroll origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5">
+      <ul>
+        <% Notification.all.each do |notification| %>
+          <%= link_to notification.message, polymorphic_url(notification.notifiable_type.tableize.singularize, :id => notification.notifiable_id), class: "block px-4 py-2 text-sm text-gray-700 border-b border-gray-900/10 hover:bg-gray-100" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
