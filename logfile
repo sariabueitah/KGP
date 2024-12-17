@@ -1,0 +1,74 @@
+2024-12-17 01:56:40.001 +03 [65249] LOG:  starting PostgreSQL 17.0 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-12-17 01:56:40.003 +03 [65249] LOG:  listening on IPv6 address "::1", port 5432
+2024-12-17 01:56:40.003 +03 [65249] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-12-17 01:56:40.004 +03 [65249] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-12-17 01:56:40.012 +03 [65252] LOG:  database system was shut down at 2024-12-17 01:55:46 +03
+2024-12-17 01:56:40.023 +03 [65249] LOG:  database system is ready to accept connections
+2024-12-17 01:57:11.994 +03 [65249] LOG:  received fast shutdown request
+2024-12-17 01:57:11.996 +03 [65249] LOG:  aborting any active transactions
+2024-12-17 01:57:11.998 +03 [65249] LOG:  background worker "logical replication launcher" (PID 65255) exited with exit code 1
+2024-12-17 01:57:12.000 +03 [65250] LOG:  shutting down
+2024-12-17 01:57:12.001 +03 [65250] LOG:  checkpoint starting: shutdown immediate
+2024-12-17 01:57:12.028 +03 [65250] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.025 s, sync=0.001 s, total=0.029 s; sync files=4, longest=0.001 s, average=0.001 s; distance=6 kB, estimate=6 kB; lsn=0/11357AB0, redo lsn=0/11357AB0
+2024-12-17 01:57:12.032 +03 [65249] LOG:  database system is shut down
+2024-12-17 01:57:23.517 +03 [65489] LOG:  starting PostgreSQL 17.2 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-12-17 01:57:23.519 +03 [65489] LOG:  listening on IPv6 address "::1", port 5432
+2024-12-17 01:57:23.519 +03 [65489] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-12-17 01:57:23.520 +03 [65489] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-12-17 01:57:23.526 +03 [65492] LOG:  database system was shut down at 2024-12-17 01:54:03 +03
+2024-12-17 01:57:23.535 +03 [65489] LOG:  database system is ready to accept connections
+2024-12-17 01:57:25.728 +03 [65489] LOG:  received fast shutdown request
+2024-12-17 01:57:25.729 +03 [65489] LOG:  aborting any active transactions
+2024-12-17 01:57:25.731 +03 [65489] LOG:  background worker "logical replication launcher" (PID 65495) exited with exit code 1
+2024-12-17 01:57:25.732 +03 [65490] LOG:  shutting down
+2024-12-17 01:57:25.732 +03 [65490] LOG:  checkpoint starting: shutdown immediate
+2024-12-17 01:57:25.737 +03 [65490] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1501DA8, redo lsn=0/1501DA8
+2024-12-17 01:57:25.746 +03 [65489] LOG:  database system is shut down
+2024-12-17 01:57:27.827 +03 [65523] LOG:  starting PostgreSQL 17.2 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-12-17 01:57:27.829 +03 [65523] LOG:  listening on IPv6 address "::1", port 5432
+2024-12-17 01:57:27.829 +03 [65523] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-12-17 01:57:27.830 +03 [65523] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-12-17 01:57:27.834 +03 [65526] LOG:  database system was shut down at 2024-12-17 01:57:25 +03
+2024-12-17 01:57:27.841 +03 [65523] LOG:  database system is ready to accept connections
+2024-12-17 01:59:00.120 +03 [66119] FATAL:  role "saryabueitah" does not exist
+2024-12-17 01:59:00.235 +03 [66120] FATAL:  role "saryabueitah" does not exist
+2024-12-17 02:01:03.880 +03 [66543] FATAL:  role "saryabueitah" does not exist
+2024-12-17 02:01:03.989 +03 [66545] FATAL:  role "saryabueitah" does not exist
+2024-12-17 02:02:27.842 +03 [65524] LOG:  checkpoint starting: time
+2024-12-17 02:05:40.269 +03 [65524] LOG:  checkpoint complete: wrote 1884 buffers (11.5%); 1 WAL file(s) added, 0 removed, 0 recycled; write=192.368 s, sync=0.046 s, total=192.427 s; sync files=636, longest=0.002 s, average=0.001 s; distance=8746 kB, estimate=8746 kB; lsn=0/1D8C750, redo lsn=0/1D8C6C0
+2024-12-17 02:17:52.333 +03 [68371] ERROR:  database "kpg_development" is being accessed by other users
+2024-12-17 02:17:52.333 +03 [68371] DETAIL:  There are 2 other sessions using the database.
+2024-12-17 02:17:52.333 +03 [68371] STATEMENT:  DROP DATABASE IF EXISTS "kpg_development" /*application='Kpg'*/
+2024-12-17 02:17:58.784 +03 [65523] LOG:  received fast shutdown request
+2024-12-17 02:17:58.784 +03 [65523] LOG:  aborting any active transactions
+2024-12-17 02:17:58.785 +03 [67570] FATAL:  terminating connection due to administrator command
+2024-12-17 02:17:58.786 +03 [67875] FATAL:  terminating connection due to administrator command
+2024-12-17 02:17:58.788 +03 [65523] LOG:  background worker "logical replication launcher" (PID 65529) exited with exit code 1
+2024-12-17 02:17:58.789 +03 [65524] LOG:  shutting down
+2024-12-17 02:17:58.790 +03 [65524] LOG:  checkpoint starting: shutdown immediate
+2024-12-17 02:17:58.796 +03 [65524] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=7871 kB; lsn=0/1D8C800, redo lsn=0/1D8C800
+2024-12-17 02:17:58.801 +03 [65523] LOG:  database system is shut down
+2024-12-17 02:18:04.620 +03 [68410] LOG:  starting PostgreSQL 17.2 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-12-17 02:18:04.623 +03 [68410] LOG:  listening on IPv6 address "::1", port 5432
+2024-12-17 02:18:04.623 +03 [68410] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-12-17 02:18:04.624 +03 [68410] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-12-17 02:18:04.630 +03 [68413] LOG:  database system was shut down at 2024-12-17 02:17:58 +03
+2024-12-17 02:18:04.641 +03 [68410] LOG:  database system is ready to accept connections
+2024-12-17 02:18:06.986 +03 [68410] LOG:  received fast shutdown request
+2024-12-17 02:18:06.987 +03 [68410] LOG:  aborting any active transactions
+2024-12-17 02:18:06.994 +03 [68410] LOG:  background worker "logical replication launcher" (PID 68416) exited with exit code 1
+2024-12-17 02:18:06.994 +03 [68411] LOG:  shutting down
+2024-12-17 02:18:06.994 +03 [68411] LOG:  checkpoint starting: shutdown immediate
+2024-12-17 02:18:06.997 +03 [68411] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1D8C878, redo lsn=0/1D8C878
+2024-12-17 02:18:07.001 +03 [68410] LOG:  database system is shut down
+2024-12-17 02:18:08.655 +03 [68448] LOG:  starting PostgreSQL 17.2 on x86_64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-12-17 02:18:08.659 +03 [68448] LOG:  listening on IPv6 address "::1", port 5432
+2024-12-17 02:18:08.659 +03 [68448] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-12-17 02:18:08.660 +03 [68448] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-12-17 02:18:08.664 +03 [68451] LOG:  database system was shut down at 2024-12-17 02:18:06 +03
+2024-12-17 02:18:08.668 +03 [68448] LOG:  database system is ready to accept connections
+2024-12-17 02:18:12.949 +03 [68449] LOG:  checkpoint starting: immediate force wait
+2024-12-17 02:18:12.953 +03 [68449] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=3, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1D8CD58, redo lsn=0/1D8CD00
+2024-12-17 02:18:13.020 +03 [68449] LOG:  checkpoint starting: immediate force wait
+2024-12-17 02:18:13.023 +03 [68449] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1D8D2C8, redo lsn=0/1D8D270
+2024-12-17 02:23:13.976 +03 [68449] LOG:  checkpoint starting: time

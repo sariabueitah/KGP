@@ -5,17 +5,13 @@ module.exports = {
     './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}',
-    './config/initializers/*.rb'
+    './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-
-      }
     },
   },
   plugins: [
