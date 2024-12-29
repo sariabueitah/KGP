@@ -60,6 +60,10 @@ class Employee < ApplicationRecord
     end
   end
 
+  def last_contract
+    contracts.order(end_date: :desc).limit(1).first unless contracts.empty?
+  end
+
   def self.active(active)
     if active == "true"
       where("contracts.end_date >= now()")

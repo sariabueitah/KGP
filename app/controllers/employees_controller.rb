@@ -17,7 +17,11 @@ class EmployeesController < ApplicationController
 
       respond_to do |format|
         if @employee.save
-          format.html { redirect_to employees_url(@employee), notice: "Employee was successfully created." }
+          if params["commit"] == "Continue to Contracts"
+            format.html { redirect_to new_employee_contract_url(@employee), notice: "Employee was successfully created." }
+          else
+            format.html { redirect_to employees_url(@employee), notice: "Employee was successfully created." }
+          end
           format.json { render :show, status: :created, location: @employee }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -52,10 +56,17 @@ class EmployeesController < ApplicationController
 
     private
       def set_employee
-        @employee = Employee.find(params[:id])
+        @employee = Employee.find(params.expect(:id))
       end
 
       def employee_params
-        params.require(:employee).permit(:first_name, :father_name, :grandfather_name, :family_name, :ar_first_name, :ar_father_name, :ar_grandfather_name, :ar_family_name, :nid, :email, :phone_number, :e_phone_number, :national, :passport_number, :nationality, :social_security_number, :social_security_number_skip, :has_dependants, :income_tax_number, :income_tax_number_skip, :marital_status)
+        params.expect(employee: [
+          :first_name, :father_name, :grandfather_name, :family_name,
+          :ar_first_name, :ar_father_name, :ar_grandfather_name, :ar_family_name,
+          :nid, :email, :phone_number, :e_phone_number,
+          :national, :passport_number, :nationality, :social_security_number,
+          :social_security_number_skip, :has_dependants, :income_tax_number, :income_tax_number_skip,
+          :marital_status
+        ])
       end
 end

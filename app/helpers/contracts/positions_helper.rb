@@ -1,0 +1,2 @@
+module Contracts::PositionsHelper
+end

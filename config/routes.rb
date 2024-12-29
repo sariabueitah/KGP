@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # eg. employees/contracts/:contract_id/edit
   scope module: "employees", path: "employees", as: "employee" do
     resources :contracts, only: [ :show, :edit, :update, :destroy ]
-    resources :positions
   end
 
   # Routes for Employees CRUD with nested routes for associated models
@@ -22,6 +21,22 @@ Rails.application.routes.draw do
       resources :contracts, only: [ :index, :new, :create ]
     end
   end
+
+  # Routes for salary_allowances with the contracts as a prefix to avoid deep nesting in the future
+  # eg. contracts/salary_allowances/:salary_allowance_id/edit
+  scope module: "contracts", path: "contracts", as: "contract" do
+    resources :salary_allowances, only: [ :show, :edit, :update, :destroy ]
+    resources :allowances
+    resources :positions
+  end
+
+  # Routes for salary_allowances with nested routes for associated models with no routes for contracts
+  # eg. contracts/:contract_id/salary_allowances/new
+  resources :contracts, only: [] do
+    resources :salary_allowances, only: [ :index, :new, :create ]
+  end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

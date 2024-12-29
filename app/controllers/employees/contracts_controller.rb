@@ -13,6 +13,7 @@ class Employees::ContractsController < ApplicationController
 
   def new
     @contract = @employee.contracts.build
+    @suggested_date = @employee.last_contract&.end_date || Date.current
   end
 
   def show
@@ -58,13 +59,15 @@ class Employees::ContractsController < ApplicationController
 
   private
   def set_contract
-    @contract = Contract.find(params[:id])
+    @contract = Contract.find(params.expect(:id))
   end
 
   def set_employee
-    @employee = Employee.find(params[:employee_id])
+    @employee = Employee.find(params.expect(:employee_id))
   end
   def contract_params
-    params.require(:contract).permit(:start_date, :end_date, :salary, :position_id, :employee_id)
+    params.expect(contract: [
+      :start_date, :end_date, :salary, :position_id, :employee_id
+  ])
   end
 end

@@ -3,6 +3,18 @@ class Contract < ApplicationRecord
   belongs_to :employee
   belongs_to :position
 
+  # validations
+  validates :start_date, :end_date, :salary, :position_id, presence: true
+  validate :end_date_after_start_date?
+
+  def end_date_after_start_date?
+    return if [ end_date.blank?, start_date.blank? ].any?
+    if end_date < start_date
+      errors.add :end_date, "must be greater than start date"
+    end
+  end
+
+
   SEARCH_PARAMS = %i[text_search employee_id year active column direction action].freeze
   SEARCH_COLUMNS = {
     "employees" => [ "first_name", "family_name", "ar_first_name", "ar_family_name" ],

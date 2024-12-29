@@ -1,0 +1,2 @@
+module Contracts::AllowancesHelper
+end

@@ -5,7 +5,7 @@
   <% content_for :title, "Positions" %>
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Positions</h1>
-    <%= link_to "New position", new_employee_position_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "New position", new_contract_position_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
   <table id="positions" class="min-w-full divide-y">
     <thead>
@@ -18,7 +18,7 @@
       <% @positions.each do |position| %>
         <tr id="<%= dom_id position %>" class="hover:bg-gray-100">
           <td class="whitespace-nowrap text-sm font-medium"><%= position.title %></td>
-          <td class="whitespace-nowrap text-sm font-medium"><%= link_to "Show", employee_position_path(position), class: "my-2 font-medium" %></td>
+          <td class="whitespace-nowrap text-sm font-medium"><%= link_to "Show", contract_position_path(position), class: "my-2 font-medium" %></td>
         </tr>
       <% end %>
     </tbody>

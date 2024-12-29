@@ -1,6 +1,6 @@
 <%= form_with(model: [employee, contract], class: "contents") do |form| %>
   <% if contract.errors.any? %>
-    <div id="error_explanation" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+    <div id="error_explanation" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
       <%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:
       <ul>
         <% contract.errors.each do |error| %>
@@ -9,22 +9,25 @@
       </ul>
     </div>
   <% end %>
-  <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5 my-5">
-    <div class="col-span-1">
-      <%= form.label :start_date, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.date_field :start_date %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :end_date, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.date_field :end_date %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :salary, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.text_field :salary, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-    </div>
-    <div class="col-span-1">
-      <%= form.label :position, class: "block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"%>
-      <%= form.collection_select :position_id, Position.order(:title), :id, :title %>
+  <div class="space-y-12">
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 border-b gap-x-12 border-gray-900/10 pb-12">
+      <h2 class="text-base/7 font-semibold text-gray-900 block col-span-full mt-12">Contract Information</h2>
+      <div class="relative z-0 my-6">
+        <%= form.date_field :start_date, value: @suggested_date, class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :start_date, "Start Date", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.date_field :end_date, value: @suggested_date.next_year, class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :end_date, "End Date", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.text_field :salary, placeholder: "", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" %>
+        <%= form.label :salary, "Salary", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
+      <div class="relative z-0 my-6">
+        <%= form.select :position_id, options_for_select(Position.order(:title).map {|v| [v.title.humanize.capitalize, v.id]}, :selected => params[:contract] ? params[:contract][:position_id] : nil), {:include_blank => true}, { class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"} %>
+        <%= form.label :position_id, "Position", class: "peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-has-[option[value='']:checked]:scale-100 peer-has-[option[value='']:checked]:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+      </div>
     </div>
   </div>
   <div class="inline">
